@@ -28,8 +28,6 @@ print(Fore.LIGHTBLACK_EX + "GREY - The letter is not in the word in any spot.\n"
 word_list = open('word-list.txt', 'r').read().splitlines()
 word = random.choice(word_list)
 word = word.upper()
-# word = "RIVER"
-print(word)
 
 tries_left = 6
 success = False
@@ -63,13 +61,14 @@ while(tries_left > 0 and success == False):
             if letter not in word_has: word_has.append(letter)
         
         guessed_correct = [k for k,v in zip(guess_list, letter_list) if k==v]
-        # print("guessed_has",guessed_has,"guessed_correct,",guessed_correct,"word_has",word_has,"used_letters",used_letters,"right_guesses",right_guesses)
 
         new_word, right = word_unequal(letter_list, guess_list, guessed_has, guessed_correct)
 
         guess_history.append(new_word)
+        
         for each_letter in right:
             if each_letter not in right_guesses: right_guesses.append(each_letter)
+        
         for each in guess_history:
             print_list(each)
 
