@@ -1,12 +1,11 @@
+# WORDLE clone by Frank Therattil (21MCA0184), VIT University, Vellore
+
 import random
 import string
 from art import *
 from colorama import Fore, Style
 
 from validate import *
-
-def print_list(lst):
-    print(" ".join(lst))
 
 def letter_history():
     print("Letter History :", end=' ')
@@ -43,41 +42,38 @@ while(tries_left > 0 and success == False):
     valid_guess = False
     while(not valid_guess):
         guess_word = input(Fore.LIGHTMAGENTA_EX + "Guess the word : " + Fore.RESET).strip()
-        valid_guess = validate_guess(guess_word, word_list)
+        valid_guess = validate_guess(guess_word.lower(), word_list)
         
     guess = guess_word.upper()
 
-    if word_equal(word, guess):
-        success = True
+    letter_list, guess_list = list(word), list(guess)
 
-    else:
-        letter_list, guess_list = list(word), list(guess)
-
-        for letter in guess_list:
-            if letter not in used_letters: used_letters.append(letter)
+    for letter in guess_list:
+        if letter not in used_letters: used_letters.append(letter)
         
-        guessed_has = [i for i in letter_list if i in guess_list]
-        for letter in guessed_has:
-            if letter not in word_has: word_has.append(letter)
+    guessed_has = [i for i in letter_list if i in guess_list]
+    for letter in guessed_has:
+        if letter not in word_has: word_has.append(letter)
         
-        guessed_correct = [k for k,v in zip(guess_list, letter_list) if k==v]
+    guessed_correct = [k for k,v in zip(guess_list, letter_list) if k==v]
 
-        new_word, right = word_unequal(letter_list, guess_list, guessed_has, guessed_correct)
+    new_word, right = word_unequal(letter_list, guess_list, guessed_has, guessed_correct)
 
-        guess_history.append(new_word)
+    guess_history.append(new_word)
         
-        for each_letter in right:
-            if each_letter not in right_guesses: right_guesses.append(each_letter)
+    for each_letter in right:
+        if each_letter not in right_guesses: right_guesses.append(each_letter)
         
-        for each in guess_history:
-            print_list(each)
+    for each in guess_history:
+        print(" ".join(each))
 
-        letter_history()
+    letter_history()
+    if word_equal(guess, word):  success = True
 
-        _try_ = "tries"
-        if tries_left == 2: _try_ = "try"
-        if tries_left != 1 :
-            print(Fore.BLUE + "\nYou have {0} more {1} left\n".format(tries_left-1, _try_) + Fore.RESET)
+    _try_ = "tries"
+    if tries_left == 2: _try_ = "try"
+    if tries_left != 1 and success == False:
+        print(Fore.BLUE + "\nYou have {0} more {1} left\n".format(tries_left-1, _try_) + Fore.RESET)
 
     tries_left -= 1
 

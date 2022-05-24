@@ -14,10 +14,6 @@ def validate_guess(current_guess, word_list):
     else:
         print(Fore.LIGHTRED_EX + "Word should be of five letters !" + Fore.RESET)
 
-def word_equal(listed_word, guessed_word):
-    if listed_word == guessed_word:
-        return True
-
 def word_unequal(hidden_list, open_list, guessed_includes, guessed_right):
     temp_word = []
     right_letters = []
@@ -33,9 +29,13 @@ def word_unequal(hidden_list, open_list, guessed_includes, guessed_right):
 
         elif letter in guessed_includes:
             temp_word.append(Fore.YELLOW + letter + Fore.RESET)
+            if not (guessed_includes.count(letter) > guessed_right.count(letter)): guessed_right.remove(letter)
             guessed_includes.remove(letter)
-            if letter in guessed_right: guessed_right.remove(letter)
 
         else: temp_word.append(letter)
 
     return temp_word, right_letters
+
+def word_equal(listed_word, guessed_word):
+    if listed_word == guessed_word:
+        return True

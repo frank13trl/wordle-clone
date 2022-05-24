@@ -1,5 +1,6 @@
 # Wordle Clone
 ### Clone of the word guessing game 'WORDLE', by The New York Times
+#### Created by Frank Therattil (21MCA0184), VIT University, Vellore
 ##### Using Python3
 
 *This game was done as part the internship process for Coditation*
