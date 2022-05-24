@@ -24,4 +24,4 @@ After each guess, the color of the letters will change to show how close your gu
     - `pip install colorama`
     - `pip install art`
 
-## Screen
+## Screenshots
