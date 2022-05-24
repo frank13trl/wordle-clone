@@ -24,9 +24,9 @@ After each guess, the color of the letters will change to show how close your gu
     - `pip install art`
 
 ## Screenshots
--Welcome
+- Welcome
 ![image](https://github.com/frank13trl/wordle-clone/blob/main/Screenshots/1.png)
--Guess...
+- Guess...
 ![image](https://github.com/frank13trl/wordle-clone/blob/main/Screenshots/2.png)
--Result
+- Result
 ![image](https://github.com/frank13trl/wordle-clone/blob/main/Screenshots/3.png)
