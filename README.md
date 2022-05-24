@@ -17,11 +17,13 @@ After each guess, the color of the letters will change to show how close your gu
 2. Run main.py in command line
 
 #### Note
-- You should be installed Python3 in your system
+- Python3 should be installed in your system
 - Install colorama and art modules
-
 - To install the above modules, paste the following codes in your commad line
     - `pip install colorama`
     - `pip install art`
 
 ## Screenshots
+![image](https://github.com/frank13trl/wordle-clone/blob/main/Screenshots/1.png)
+![image](https://github.com/frank13trl/wordle-clone/blob/main/Screenshots/2.png)
+![image](https://github.com/frank13trl/wordle-clone/blob/main/Screenshots/3.png)
