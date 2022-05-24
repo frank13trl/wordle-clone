@@ -12,10 +12,16 @@ After each guess, the color of the letters will change to show how close your gu
 - YELLOW - The letter is in the word but in the wrong spot.
 - GREY - The letter is not in the word in any spot.
 
-#### To try the game...
+### To try the game...
 1. Clone or download the repository
 2. Run main.py in command line
 
-- Note
-    - You should have installed Python3 in your system
-    - Install colorama and art modules
+#### Note
+- You should be installed Python3 in your system
+- Install colorama and art modules
+
+- To install the above modules, paste the following codes in your commad line
+    - `pip install colorama`
+    - `pip install art`
+
+## Screen
