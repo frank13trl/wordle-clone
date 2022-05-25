@@ -27,7 +27,6 @@ print(Fore.LIGHTBLACK_EX + "GREY - The letter is not in the word in any spot.\n"
 word_list = open('word-list.txt', 'r').read().splitlines()
 word = random.choice(word_list)
 word = word.upper()
-word = "POPPY"
 
 tries_left = 6
 success = False
