@@ -15,7 +15,7 @@ After each guess, the color of the letters will change to show how close your gu
 
 ### To try the game...
 1. Clone or download the repository
-2. Run main.py in command line
+2. Run wordle.py in command line
 
 #### Note
 - Python3 should be installed in your system
